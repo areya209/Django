@@ -21,5 +21,6 @@ urlpatterns = [
     # path('demo',include('demo.url')),
     path('', views.home),
     path('projectadd',views.Projectadd,name='projectadd2'),
-    path('viewprojects',views.viewproject,name='viewprojects1')
+    path('viewprojects',views.viewproject,name='viewprojects1'),
+    path('idproject/<int:id>/',views.viewid,name='viewidd')
 ]

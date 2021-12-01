@@ -16,7 +16,10 @@ def viewproject(request):
     dataproject = Projects.objects.all()
 
     return render(request, 'project/viewproject.html', {'data': dataproject})
+def viewid(request,id):
+    dataproject = Projects.objects.filter(Project_id=id)
 
+    return render(request,'project/showproject.html',{'data':dataproject})
 
 @login_required
 def Projectadd(request):

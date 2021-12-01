@@ -10,7 +10,7 @@
 {% block name %}
 <h1>hi</h1>
 {% for i in data %}
-<h1>{{i.Project_name}}</h1>
+<h1><a href="{% url 'viewidd' i.Project_id %}">{{i.Project_name}}</a></h1>
 {% endfor %}
 {% endblock name %}
 

@@ -1,0 +1,10 @@
+{% extends 'project/base.html' %}
+
+
+{% block name %}
+{%  for i in data %}
+{{i.Project_name}}
+{{i.Project_details}}
+{% endfor %}
+
+{% endblock name %}
