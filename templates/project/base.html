@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title {% endblock %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></head>
+<body >
+{% if user.is_authenticated %}
+
+<ul class="nav justify-content-center dark">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'projectadd2' %}">add project</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'viewprojects1' %}">view project</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+   <a href="{% url 'vewiu' %}">username :  {{user.username}}</a>
+  </li>
+    <li class="nav-item">
+    <button class="btn btn-primary"><a style="color:white" href="{% url 'logut' %}"> logout</a></button>
+  </li>
+</ul>
+{% endif %}
+
+{% block name %}
+
+{% if user.is_authenticated %}
+<h1>heelo {{user.username}}</h1>
+{% endif %}
+{% endblock name %}
+
+<!--    <table class="table table-dark table-hover">-->
+<!--             {% for i in data %}-->
+<!--      </td>-->
+
+<!--        {{i.name}} <br>-->
+
+<!--      <td>-->
+<!--          {% endfor%}-->
+<!--  ...-->
+<!--</table>-->
+<pre>
+
+
+
+
+
+
+
+
+{% if  not user.is_authenticated %}
+<div class="nav justify-content-center">
+
+<h1 class=" btn-danger " >plz login </h1><br>
+    <button class="btn btn-info  justify-content-center "> <a href="{% url 'log'%}">login</a></button>
+
+</div>
+{% endif %}
+
+
+</pre>
+{% if user.is_authenticated %}
+<h1 align="center"> footer</h1>
+{% endif %}
+
+
+</body>
+</html>

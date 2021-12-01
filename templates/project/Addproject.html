@@ -1,0 +1,9 @@
+{% extends 'project/base.html' %}
+{% block title %}add project {% endblock  %}
+{% block name %}
+ <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">add project</button>
+    </form>
+{% endblock name %}

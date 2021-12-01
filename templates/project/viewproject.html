@@ -1,0 +1,18 @@
+
+{% extends 'project/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block name %}
+<h1>hi</h1>
+{% for i in data %}
+<h1>{{i.Project_name}}</h1>
+{% endfor %}
+{% endblock name %}
+
+</body>
+</html>

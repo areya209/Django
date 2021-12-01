@@ -1,0 +1,24 @@
+
+
+
+<div style="border:2px  solid; width:60%; text_align:center;margin:2px " class="rounded bg-info p-2 text-dark bg-opacity-10">
+  <div style="  width:70%;margin:2px auto ; text:align-center">
+  <h2 class="text-center">Sign up</h2>
+  <form method="post" style="">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button  class="btn btn-primary" type="submit">Sign up</button>
+  </form>
+    </div>
+  </div>
