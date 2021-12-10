@@ -3,8 +3,24 @@
 
 {% block name %}
 {%  for i in data %}
-{{i.Project_name}}
-{{i.Project_details}}
+<h1 class="btn btn-danger">{{i.Project_name}}<h1></h1><br>
+{{i.Project_details}}<br>
+    {{i.Project_id}}<br>
+    {{i.Avg_rate}}
 {% endfor %}
 
+
+
+ <form method="POST" class="form-group">
+        {% csrf_token %}
+       <input name="comment"><br>
+     <input name="project_id"><br>
+        <button type="submit" class="btn btn-success">add comment</button>
+    </form>
+
+
+
+     {% for l in forma %}
+    {{l.comment}}
+    {% endfor %}
 {% endblock name %}

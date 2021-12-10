@@ -1,15 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>{{user.username}}</h1>
-<h1>{{user.email}}</h1>
-<h1>{{user.first_name}}</h1>
-<h1>{{user.last_name}}</h1>
-<h1>{{user.image}}</h1>
+{% extends 'project/base.html' %}
+{% block name %}
 
-</body>
-</html>
+
+<h1></h1>
+<h1></h1>
+<h1></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">firsname</th>
+      <th scope="col">lastname</th>
+         <th scope="col">phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{user.username}}</th>
+      <td>{{user.email}}</td>
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+        <td>01000000000</td>
+    </tr>
+
+
+  </tbody>
+</table>
+{% endblock name %}

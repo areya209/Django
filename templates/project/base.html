@@ -8,23 +8,29 @@
 <body >
 {% if user.is_authenticated %}
 
-<ul class="nav justify-content-center dark">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="{% url 'projectadd2' %}">add project</a>
-  </li>
+<ul  class="nav nav-tabs d-flex justify-content-center">
   <li class="nav-item">
     <a class="nav-link" href="{% url 'viewprojects1' %}">view project</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+<li class="nav-item">
+        <a class="nav-link " aria-current="page" href="{% url 'projectadd2' %}">add project</a>
   </li>
-  <li class="nav-item">
-   <a href="{% url 'vewiu' %}">username :  {{user.username}}</a>
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">user:{{user.username}}</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="{% url 'vewiu' %}">  profile :  {{user.username}}</a>
+     </a>
+      </li>
+      <li>
+          <a class="dropdown-item" href="{% url 'chan' %}">change password</a></li>
+
+    </ul>
   </li>
-    <li class="nav-item">
-    <button class="btn btn-primary"><a style="color:white" href="{% url 'logut' %}"> logout</a></button>
+
+  <li class="nav-item">
+<button class="btn btn-primary"><a style="color:white" href="{% url 'logut' %}"> logout</a></button>  </li>
   </li>
 </ul>
+
 {% endif %}
 
 {% block name %}
@@ -67,7 +73,8 @@
 {% if user.is_authenticated %}
 <h1 align="center"> footer</h1>
 {% endif %}
-
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
 </body>
 </html>

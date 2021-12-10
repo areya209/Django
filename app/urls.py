@@ -18,8 +18,9 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('demo/',include('demo.url')),
-    path('project/',include('project1.url')),
+    # path('demo/',include('demo.url')),
+    # path('project/',include('project1.url')),
+    path('instgram/',include('instgram.urls'))
     # path('hamed/', views.home),
     # path('', views.index, name='index'),
 # path('<str:room_name>/', views.room, name='room'),

@@ -8,10 +8,43 @@
 </head>
 <body>
 {% block name %}
-<h1>hi</h1>
-{% for i in data %}
-<h1><a href="{% url 'viewidd' i.Project_id %}">{{i.Project_name}}</a></h1>
-{% endfor %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">project</th>
+      <th scope="col">project</th>
+      <th scope="col">project</th>
+      <th scope="col">project</th>
+      <th scope="col">project</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+
+      {% for i in data %}
+
+      <td><h1><a href="{% url 'viewidd' i.Project_id %}">{{i.Project_name}}</a></h1>
+          {{arv}}
+
+          {% endfor %}
+</td>
+
+    </tr>
+
+
+  </tbody>
+</table>
+
+<div>
+    {% for m in arv %}
+    {{m.Avg_rate}}
+    ب
+    {% endfor %}
+</div>
+
+
 {% endblock name %}
 
 </body>
