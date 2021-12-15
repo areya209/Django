@@ -16,12 +16,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from instgram import views
+from .views import TokenObtainPairView
+from rest_framework_simplejwt.views import (
+    TokenRefreshView,
+)
+
 urlpatterns = [
     # path('apis', views.Apostudent.as_view() ,name="api"),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('get',views.get,name="f"),
     path('Posts/',views.Dataview.as_view(),name='Data'),
     path('postid/<int:pk>',views.Dataid.as_view(),name="ff"),
     path('userid/<int:pk>',views.Viewuser.as_view()),
+    path('userall/', views.Viewuserall.as_view(),name="usera"),
+    path('addd',views.Addt.as_view()),
+    # path('register/', views.RegisterAPI.as_view(), name='register'),
+    path('Authapi/', views.AuthApi, name='Authapi'),
+
     path('profile/<int:pk>',views.Viewpprofile.as_view()),
     path('viewfollow/<int:pk>',views.Viewfolloww.as_view())
 

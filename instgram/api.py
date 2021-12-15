@@ -1,5 +1,8 @@
 from rest_framework import serializers
-from .models import Post,Comment,Follow,User,Profile
+from .models import Post, Comment, Follow, User, Profile, Col
+from rest_framework.authtoken.models import Token
+
+
 
 class POSRSIL(serializers.ModelSerializer):
 
@@ -20,6 +23,8 @@ class USerview(serializers.ModelSerializer):
         fields ='__all__'
 
 
+
+
 class viewprofile(serializers.ModelSerializer):
 
     class Meta:
@@ -30,4 +35,11 @@ class viewprofile(serializers.ModelSerializer):
 class viewfollow(serializers.ModelSerializer):
     class Meta:
         model = Follow
+        fields = '__all__'
+
+
+
+class ADD(serializers.ModelSerializer):
+    class Meta:
+        model = Col
         fields = '__all__'
