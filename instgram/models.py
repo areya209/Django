@@ -12,8 +12,9 @@ class Profile(models.Model):
     profile_pic = models.ImageField(upload_to='profile/', blank=True, default='../static/images/default.png')
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    def __int__(self):
-        return self.user
+
+    def __str__(self):
+        return self.user.username
 
 
 class Post(models.Model):
@@ -21,7 +22,6 @@ class Post(models.Model):
     image_caption = models.CharField(max_length=60, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     profile = models.ForeignKey(User, related_name='post', on_delete=models.CASCADE)
-    user_profile = models.ForeignKey(Profile, related_name="post", on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, related_name="likes", blank=True)
     image = models.ImageField(upload_to='images/', blank=True)
 
@@ -55,8 +55,8 @@ class Comment(models.Model):
 	image = models.ForeignKey(Post,related_name="comment", on_delete=models.CASCADE)
 	profile = models.ForeignKey(User,related_name="comment", on_delete=models.CASCADE)
 
-	def __int__(self):
-		return self.profile
+	def __str__(self):
+		return self.profile.username
 
 
 class Follow(models.Model):

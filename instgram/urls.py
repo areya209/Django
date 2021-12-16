@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from instgram import views
 from .views import TokenObtainPairView
+
 from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
