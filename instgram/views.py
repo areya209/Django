@@ -167,7 +167,7 @@ class follow(generics.ListCreateAPIView):
 class ProfileUpdate(generics.RetrieveUpdateAPIView):
     queryset = Profile.objects.all()
     serializer_class = ProfileSer
-    Lookup_field = 'pk'
+    Lookup_field = 'user'
 
 
 # Add Comment On the Post

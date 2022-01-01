@@ -35,7 +35,12 @@ class POSRSIL(serializers.ModelSerializer):
 class viewprofile(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = '__all__'
+        fields = ('id', 'bio', 'profile_pic', 'user')
+
+        def update(self, instance, validated_data):
+            mode_of_payment = validated_data.pop('user')
+            instance.mode_of_payment_user = mode_of_payment.user
+            return instance
 
 
 class viewfollow(serializers.ModelSerializer):
@@ -66,6 +71,23 @@ class viewlike(serializers.ModelSerializer):
     class Meta:
         model = Likes
         fields = '__all__'
+
+
+# Update
+# class StatusSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Status
+#
+#
+# class ModelIssueSerializer(serializers.ModelSerializer):
+#     status = StatusSerializer()
+#
+#     # ...
+#     def update(self, instance, validated_data):
+#         status = validated_data.pop('status')
+#         instance.status_id = status.id
+#         # ... plus any other fields you may want to update
+#         return instance
 
 
 # Reset Password Of User
